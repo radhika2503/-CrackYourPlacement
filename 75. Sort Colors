@@ -1,0 +1,25 @@
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int count0=count(nums.begin(),nums.end(),0);
+        int count1=count(nums.begin(),nums.end(),1);
+        int count2=count(nums.begin(),nums.end(),2);
+        int i=0;
+        while(i<count0){
+            nums[i]=0;
+            i++;
+        }
+        i=0;
+        while(i<count1){
+            nums[count0+i]=1;
+            i++;
+        }
+        i=0;
+        while(i<count2){
+            nums[count0+i+count1]=2;
+            i++;
+
+        }
+
+    }
+};
