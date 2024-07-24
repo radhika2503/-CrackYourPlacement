@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int maxArea(vector<int>& h) {
+        int n=h.size();
+        int l=0;
+        int r=n-1;
+        int maxarea=0;
+        while(l<r){
+            int currentarea= min(h[l],h[r])* (r-l);
+            maxarea=max(maxarea,currentarea);
+            if(h[l]<h[r]){
+                l++;
+            }
+            else{
+                r--;
+            }
+        }
+        return maxarea;
+
+    }
+};
